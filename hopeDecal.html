@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<style>
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+}
+
+.bgimg {
+  background-position: center;
+  background-size: cover;
+  background-image: url("images/coffeemyass.png");
+  min-height: 75%;
+}
+
+.menu {
+  display: none;
+}
+</style>
+</head>
+<body>
+
+
+<!-- Links (sit on top) -->
+<div class="w3-top">
+  <div class="w3-row w3-padding w3-black">
+    <div class="w3-col s3">
+        <a href="index.html" class="w3-button w3-block w3-black">Home</a>
+      </div>
+    <div class="w3-col s3">
+      <a href="hopeDecal.html" class="w3-button w3-block w3-black">Hope Decal</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#" class="w3-button w3-block w3-black">Cool Physics Things</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="resume.pdf" class="w3-button w3-block w3-black">Resume</a>
+    </div>
+  </div>
+</div>
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+  
+  <div class="w3-display-middle w3-center">
+    <span class="w3-text-white" style="font-size:90px">STAC BEAR Power Distribution Panel<br>HOPE Decal</span>
+  </div>
+
+</header>
+
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-sand w3-grayscale w3-large">
+
+<!-- About Container -->
+<div class="w3-container" id="about">
+  <div class="w3-content" style="max-width:700px">
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">Prototype Design</span></h5>
+    <p><i>Contact garima.prabhakar@berkeley.edu with any problems, preferably about the PDB prototype.</i> STAC is designing an autonomous rover to map and detect life on moon and mars-like terrain. The motors, bio box, communications, and sensors all require power in different 
+        voltage levels and current draw. This board is a power distribution panel with current sensing that can handle up to 50 Amps of current from 12-40V on 6 busses for the drive and arm motors, as well as 4 slots for breakout DCDC converters for low 
+        power, communication, biobox, and sensor applications. This prototype is controlled with an arduino via I2C and features:
+
+    </p>
+
+    <ul>
+        <li>Support for Power Supplies from 12-40V.</li>
+        <li>Support for 6 high power busses with 50 A current draw on each bus.</li>
+        <li>A battery voltage sensor.</li>
+        <li>Current draw sensors on each high power bus for up to 50 A.</li>
+        <li>An ADC for current measurements multiplexed across buses and a battery voltage measurement. </li>
+        <li>Automotive relays to programmatically switch the power on each bus on and off.</li>
+        <li>An overcurrent pin to switch automotive relay off as soon as the hall sensor detects an overcurrent.</li>
+        <li>A current fuse holder for diagnostics/fuses.</li>
+        <li>LED indicator for when relays are switched off.</li>
+        <li>Other overcurrent/overvoltage protection fuses and diodes.</li>
+        <li>Anticipated support for 4 programmable DCDC converters ranging from 1.75-12V output and 3A current draw on each channel.</li>
+      </ul>
+    <img src="/w3images/coffeeshop.jpg" style="width:100%;max-width:1000px" class="w3-margin-top">
+  </div>
+</div>
+
+
+<!-- Schematic -->
+<div class="w3-container" id="about">
+    <div class="w3-content" style="max-width:700px">
+      <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">Schematic</span></h5>
+      <p>Below is the schematic for the prototype.
+  
+      </p>
+  
+      <img src="images/plsPassMeHopeSchematic.png" style="width:100%;max-width:1000px" class="w3-margin-top">
+
+      <p>Below is the schematic for the relay/current sensor to a high power bus.</p>
+      <img src="images/hopePleasePassMe.png" style="width:100%;max-width:1000px" class="w3-margin-top">
+
+      <p>Below is the schematic for the ADC, battery sensor, CMOS multiplexer for current sensors, and GPIO expander for relay/multiplexer control.</p>
+      <img src="images/hopeIFlippingSwearToGodIfYouDontPassMeYoureAPieceOfShit.png" style="width:100%;max-width:1000px" class="w3-margin-top">
+
+    </div>
+  </div>
+
+
+  <!-- Schematic -->
+<div class="w3-container" id="about">
+    <div class="w3-content" style="max-width:700px">
+      <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">Layout</span></h5>
+      <p>Below is the layout for the prototype.
+  
+      </p>
+  
+      <img src="images/layout.png" style="width:100%;max-width:1000px" class="w3-margin-top">
+
+      <p>Below is the layout for the relay/current sensor to a high power bus.</p>
+      <img src="images/relayLayout.png" style="width:100%;max-width:1000px" class="w3-margin-top">
+
+      <p>Below is a 3D View of the front of the layout.</p>
+      <img src="images/passMePlease.png" style="width:100%;max-width:1000px" class="w3-margin-top">
+
+      <p>Below is a 3D View of the back of the layout.</p>
+      <img src="images/passMePlease2.png" style="width:100%;max-width:1000px" class="w3-margin-top">
+
+    </div>
+  </div>
+
+  <div class="w3-container" id="about">
+    <div class="w3-content" style="max-width:700px">
+      <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">Implementation</span></h5>
+      <p>This is TBD, some components were ordered at the wrong specification and consequently the prototype is still under testing.
+  
+      </p>
+
+    </div>
+  </div>
+
+
+<!-- Menu Container -->
+<div class="w3-container" id="menu">
+  <div class="w3-content" style="max-width:700px">
+ 
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">BOM/Instructions</span></h5>
+  
+    <div class="w3-row w3-center w3-card w3-padding">
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Components');" id="myLink">
+        <div class="w3-col s6 tablink">Components</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Drinks');">
+        <div class="w3-col s6 tablink">Assembly and Testing Instructions</div>
+      </a>
+    </div>
+
+    <div id="Components" class="w3-container menu w3-padding-48 w3-card">
+      <h5>Components</h5>
+      <img src="images/stupidFuckingTable.png" style="width:100%;max-width:1000px" class="w3-margin-top">
+
+     
+    </div>
+
+    <div id="Drinks" class="w3-container menu w3-padding-48 w3-card">
+      <h5>Assembly and Testing Instructions</h5>
+      <p class="w3-text-grey">TBD</p><br>
+    
+     
+    </div>  
+    <img src="/w3images/coffeehouse2.jpg" style="width:100%;max-width:1000px;margin-top:32px;">
+  </div>
+</div>
+
+<!-- Contact/Area Container -->
+<div class="w3-container" id="where" style="padding-bottom:32px;">
+  <div class="w3-content" style="max-width:700px">
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">CONTACT</span></h5>
+    <p>Email: garima.prabhakar@berkeley.edu</p>
+    <img src="/w3images/map.jpg" class="w3-image" style="width:100%">
+    
+</div>
+
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+<script>
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+}
+document.getElementById("myLink").click();
+</script>
+
+</body>
+</html>
